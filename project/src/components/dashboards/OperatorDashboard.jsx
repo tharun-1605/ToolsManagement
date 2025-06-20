@@ -28,9 +28,9 @@ const OperatorDashboard = () => {
   const fetchData = async () => {
     try {
       const [statsRes, toolsRes, usageRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/dashboard/stats'),
-        axios.get('http://localhost:5000/api/tools'),
-        axios.get('http://localhost:5000/api/usage')
+        axios.get('https://toolsmanagement.onrender.com/api/dashboard/stats'),
+        axios.get('https://toolsmanagement.onrender.com/api/tools'),
+        axios.get('https://toolsmanagement.onrender.com/api/usage')
       ]);
 
       setStats(statsRes.data);
@@ -45,7 +45,7 @@ const OperatorDashboard = () => {
 
   const handleStartUsage = async (toolId) => {
     try {
-      await axios.post(`http://localhost:5000/api/tools/${toolId}/start-usage`);
+      await axios.post(`https://toolsmanagement.onrender.com/api/tools/${toolId}/start-usage`);
       fetchData(); // Refresh data
     } catch (error) {
       console.error('Error starting tool usage:', error);
@@ -55,7 +55,7 @@ const OperatorDashboard = () => {
 
   const handleStopUsage = async (toolId) => {
     try {
-      await axios.post(`http://localhost:5000/api/tools/${toolId}/stop-usage`);
+      await axios.post(`https://toolsmanagement.onrender.com/api/tools/${toolId}/stop-usage`);
       fetchData(); // Refresh data
     } catch (error) {
       console.error('Error stopping tool usage:', error);

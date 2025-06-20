@@ -33,9 +33,9 @@ const ShopkeeperDashboard = () => {
   const fetchData = async () => {
     try {
       const [statsRes, toolsRes, ordersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/dashboard/stats'),
-        axios.get('http://localhost:5000/api/tools'),
-        axios.get('http://localhost:5000/api/orders')
+        axios.get('https://toolsmanagement.onrender.com/api/dashboard/stats'),
+        axios.get('https://toolsmanagement.onrender.com/api/tools'),
+        axios.get('https://toolsmanagement.onrender.com/api/orders')
       ]);
 
       setStats(statsRes.data);
@@ -50,7 +50,7 @@ const ShopkeeperDashboard = () => {
 
   const handleOrderStatusUpdate = async (orderId, status, notes = '') => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}/status`, {
+      await axios.put(`https://toolsmanagement.onrender.com/api/orders/${orderId}/status`, {
         status,
         notes
       });

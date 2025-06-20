@@ -14,7 +14,7 @@ const UsageChart = ({ title = "Usage Analytics" }) => {
   const fetchAnalytics = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/usage/analytics?period=${period}`);
+      const response = await axios.get(`https://toolsmanagement.onrender.com/api/usage/analytics?period=${period}`);
       setData(response.data);
     } catch (error) {
       console.error('Error fetching analytics:', error);

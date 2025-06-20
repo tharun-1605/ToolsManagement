@@ -22,9 +22,9 @@ const ToolForm = ({ tool, onSubmit, onCancel }) => {
     try {
       console.log('Submitting:', formData); // <-- Add this line
       if (tool) {
-        await axios.put(`http://localhost:5000/api/tools/${tool._id}`, formData);
+        await axios.put(`https://toolsmanagement.onrender.com/api/tools/${tool._id}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/tools', formData);
+        await axios.post('https://toolsmanagement.onrender.com/api/tools', formData);
       }
       onSubmit();
     } catch (error) {

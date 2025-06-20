@@ -40,7 +40,7 @@ const Register = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/auth/companies');
+      const response = await axios.get('https://toolsmanagement.onrender.com/api/auth/companies');
       setCompanies(response.data);
     } catch (error) {
       console.error('Error fetching companies:', error);
@@ -49,7 +49,7 @@ const Register = () => {
 
   const fetchSupervisors = async (companyName) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/supervisors/${companyName}`);
+      const response = await axios.get(`https://toolsmanagement.onrender.com/api/auth/supervisors/${companyName}`);
       setSupervisors(response.data);
     } catch (error) {
       console.error('Error fetching supervisors:', error);

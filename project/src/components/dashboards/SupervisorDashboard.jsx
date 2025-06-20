@@ -30,9 +30,9 @@ const SupervisorDashboard = () => {
   const fetchData = async () => {
     try {
       const [statsRes, toolsRes, ordersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/dashboard/stats'),
-        axios.get('http://localhost:5000/api/tools'),
-        axios.get('http://localhost:5000/api/orders')
+        axios.get('https://toolsmanagement.onrender.com/api/dashboard/stats'),
+        axios.get('https://toolsmanagement.onrender.com/api/tools'),
+        axios.get('https://toolsmanagement.onrender.com/api/orders')
       ]);
 
       setStats(statsRes.data);
@@ -63,7 +63,7 @@ const SupervisorDashboard = () => {
 
   const handlePlaceOrder = async (toolId, quantity, notes) => {
     try {
-      await axios.post('http://localhost:5000/api/orders', {
+      await axios.post('https://toolsmanagement.onrender.com/api/orders', {
         toolId,
         quantity,
         notes

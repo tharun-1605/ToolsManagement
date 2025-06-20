@@ -19,7 +19,7 @@ const ToolsList = ({ tools, onUpdate, onStartUsage, userRole }) => {
   const handleDelete = async (toolId) => {
     if (window.confirm('Are you sure you want to delete this tool?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/tools/${toolId}`);
+        await axios.delete(`https://toolsmanagement.onrender.com/api/tools/${toolId}`);
         onUpdate();
       } catch (error) {
         alert(error.response?.data?.message || 'Failed to delete tool');
