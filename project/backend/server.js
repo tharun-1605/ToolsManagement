@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/cutting-tool-management')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Tharun:tharun123@cluster.x8wyt2y.mongodb.net/cutting-tool-management')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
